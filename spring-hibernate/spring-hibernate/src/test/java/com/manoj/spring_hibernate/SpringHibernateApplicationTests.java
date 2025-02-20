@@ -1,13 +1,13 @@
-package com.manojdev;
+package com.manoj.spring_hibernate;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ManojDevApplicationTests {
+class SpringHibernateApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
+	@Test
+	void contextLoads() {
+	}
 
 }
