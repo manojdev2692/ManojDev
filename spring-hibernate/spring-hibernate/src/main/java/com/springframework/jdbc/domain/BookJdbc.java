@@ -1,4 +1,4 @@
-package com.manoj.spring_hibernate.model;
+package com.springframework.jdbc.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import java.util.Objects;
 
 @Entity
-public class Book {
+public class BookJdbc {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,24 +18,21 @@ public class Book {
     private String isbn;
     private String publisher;
 
-    public Book() {}
+    public BookJdbc() {
+    }
 
-    public Book(String title, String isbn, String publisher) {
+    public BookJdbc(String title, String publisher, String isbn) {
         this.title = title;
-        this.isbn = isbn;
         this.publisher = publisher;
+        this.isbn = isbn;
     }
 
-    @Override
-    public final boolean equals(Object o) {
-        if (!(o instanceof Book book)) return false;
-
-        return Objects.equals(id, book.id);
+    public Long getId() {
+        return id;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -62,7 +59,15 @@ public class Book {
         this.publisher = publisher;
     }
 
-    public Long getId() {
-        return id;
+    @Override
+    public final boolean equals(Object o) {
+        if (!(o instanceof BookJdbc bookJdbc)) return false;
+
+        return Objects.equals(id, bookJdbc.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
 }
